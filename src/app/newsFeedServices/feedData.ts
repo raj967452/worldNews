@@ -1,16 +1,20 @@
-export interface FeedData {
-    status: string;
-    totalResults: number;
-    articles: [{
-        source: {
-            id: string;
-            name: string;
-        },
-        author: string;
-        title: string;
-        description: string;
-        url: string;
-        urlToImage: string;
-        publishedAt: string
-    }];
+export type IRootFeeds = IRootObject<IFeedData[]>;
+
+export interface IRootObject<T> {
+    count: number;
+    articles: T ;
+}
+
+export interface IFeedData {
+    source?: string[];
+    author: string;
+    title: string;
+    description: string;
+    url: string;
+    urlToImage: string;
+    publishedAt: string;
+}
+export interface Isource {
+    id: string;
+    name: string;
 }

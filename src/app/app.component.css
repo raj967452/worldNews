@@ -1,0 +1,10 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body { 
+  font-family: Arial, sans-serif;
+  margin: 0;
+  color: #222;
+}
+.mat-toolbar.mat-primary{
+  background-color: #ad0000;
+}

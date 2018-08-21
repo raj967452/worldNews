@@ -1,3 +1,29 @@
-<p>
-  news-feeds-list works!
-</p>
+<section class="mat-typography">
+  <h1>Top Stories</h1>
+  <!--ul>
+    <li *ngFor="let news of feedsData$">
+      <div>
+        <a href="{{news.url}}" target="_blank"><img src="{{news.urlToImage}}" alt="{{news.title}}"></a>
+      </div>
+      <a href="{{news.url}}">{{news.title}}</a>
+      <p>{{news.description}}</p>
+      <span>{{ news.publishedAt | date:'medium' }}</span>
+    </li>
+  </ul-->
+
+  <mat-card *ngFor="let news of feedsData$" class="news-card">
+    <mat-card-header>
+      <!--div mat-card-avatar class="example-header-image"></div-->
+      <mat-card-title>
+        <a routerLink="/news/{{news.source.id}}"><h2 class="mat-h2">{{(news.title.length>50)? (news.title | slice:0:50)+'...':(news.title)}}</h2></a>
+      </mat-card-title>
+      <mat-card-subtitle>{{news.source.name}}, <span>{{ news.publishedAt | date:'medium' }}</span></mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{news.urlToImage}}" alt="{{news.title}}">    
+  </mat-card>
+
+
+  <button (click)="loadmore();">
+    Load more
+  </button>
+</section>
