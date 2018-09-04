@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import {NewsFeedsService} from '../../newsFeedServices/news-feeds.service';
-import { HttpErrorHandler, HandleError } from '../../http-error-handler.service';
+import {NewsFeedsService} from '../../../services/newsFeedServices/news-feeds.service';
+import { HttpErrorHandler, HandleError } from '../../../http-error-handler.service';
 
-import {IFeedData} from '../../newsFeedServices/feedData';
+import {IFeedData} from '../../../services/newsFeedServices/feedData';
 
 @Component({
   selector: 'app-news-feeds-details',

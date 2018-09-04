@@ -3,6 +3,7 @@ import {FormsModule} from '@angular/forms';
 import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 import {MaterialModule} from './material/material.module';
 import {
   MatAutocompleteModule,
@@ -43,18 +44,19 @@ import {
 } from '@angular/material';
 
 import {AppComponent} from './app.component';
-import {ConfigComponent} from './config/config.component';
 
-import {ConfigService} from './config/config.service';
 import {HttpErrorHandler} from './http-error-handler.service';
 import {MessageService} from './message/message.service';
-import {MessageComponent} from './message/message.component';
-import {NewsFeedsService} from './newsFeedServices/news-feeds.service';
-import {NewsApiService} from './newsFeedServices/news-api.service';
+import {NewsFeedsService} from './services/newsFeedServices/news-feeds.service';
+import {NewsApiService} from './services/newsFeedServices/news-api.service';
 
-import {NewsFeedsListComponent} from './newsFeedComponent/news-feeds-list/news-feeds-list.component';
-import {NewsFeedsDetailsComponent} from './newsFeedComponent/news-feeds-details/news-feeds-details.component';
-import {AppRoutingModule} from './/app-routing.module';
+import {MessageComponent} from './message/message.component';
+import {NewsFeedsListComponent} from './components/newsFeedComponent/news-feeds-list/news-feeds-list.component';
+import {NewsFeedsDetailsComponent} from './components/newsFeedComponent/news-feeds-details/news-feeds-details.component';
+import {AppRoutingModule} from './app-routing.module';
+
+import { DefaultImageDirective } from './directive/default-image.directive';
+import { UserPreferenceDialogueComponent } from './components/user-preference-dialogue/user-preference-dialogue.component';
 
 @NgModule({
   exports: [
@@ -93,13 +95,19 @@ import {AppRoutingModule} from './/app-routing.module';
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule
-  ]
+  ],
+  declarations: []
 })
 export class DemoMaterialModule {}
 
 @NgModule({
   declarations: [
-    AppComponent, ConfigComponent, MessageComponent, NewsFeedsListComponent, NewsFeedsDetailsComponent
+    AppComponent,
+    MessageComponent,
+    NewsFeedsListComponent,
+    NewsFeedsDetailsComponent,
+    DefaultImageDirective,
+    UserPreferenceDialogueComponent
   ],
   imports: [
     BrowserModule,
@@ -110,9 +118,12 @@ export class DemoMaterialModule {}
     MaterialModule,
     AppRoutingModule
   ],
+  entryComponents: [
+    UserPreferenceDialogueComponent
+  ],
   providers: [
-    ConfigService, HttpErrorHandler, MessageService, NewsApiService, NewsFeedsService
+    HttpErrorHandler, MessageService, NewsApiService, NewsFeedsService
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

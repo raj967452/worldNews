@@ -18,3 +18,7 @@ export interface Isource {
     id: string;
     name: string;
 }
+
+export interface DialogData {
+    country: string;
+}

@@ -1,12 +1,44 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<!--The content below is only a placeholder and can be replaced.
+<mat-form-field class="example-user-input">
+  <mat-select placeholder="Tooltip position" [formControl]="position">
+    <mat-option *ngFor="let positionOption of positionOptions" [value]="positionOption">
+      {{positionOption}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+-->
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
   <mat-sidenav-container class="example-container">
     <mat-sidenav #sidenav mode='push'>
       <mat-icon class="icon-gray" mat-button (click)="sidenav.toggle()"></mat-icon>
       <nav>
+          <!--mat-list>
+              <h3 mat-subheader>Folders</h3>
+              <mat-list-item *ngFor="let folder of folders; last as last">
+                 <mat-icon mat-list-icon>folder</mat-icon>
+                 <h4 mat-line>{{folder.name}}</h4>
+                 <p mat-line class="demo-2"> {{folder.updated}} </p>
+                 <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+              </mat-list-item>
+              <mat-divider></mat-divider>
+              <h3 mat-subheader>Notes</h3>
+              <mat-list-item *ngFor="let note of notes">
+                 <mat-icon mat-list-icon>note</mat-icon>
+                 <h4 mat-line>{{note.name}}</h4>
+                 <p mat-line class="demo-2"> {{note.updated}} </p>
+              </mat-list-item>
+           </mat-list-->
+
         <ul>
           <li><a routerLink="/dashboard">Dashboard</a></li>
           <li><a routerLink="/news">Top News</a></li>
+          <li><a routerLink="/business">Business</a></li>
+          <li><a routerLink="/entertainment">Entertainment</a></li>
+          <li><a routerLink="/general">General</a></li>
+          <li><a routerLink="/health">Health</a></li>
+          <li><a routerLink="/science">Science</a></li>
+          <li><a routerLink="/sports">Sports</a></li>
+          <li><a routerLink="/technology">Technology</a></li>
         </ul>
       </nav>      
     </mat-sidenav>
@@ -15,8 +47,8 @@
       <mat-toolbar color="primary" class="example-toolbar">
           <button mat-icon-button (click)="sidenav.toggle()"><mat-icon svgIcon="menu-icon">menu</mat-icon></button>
           <h1 class="example-app-name">Welcome to {{ title }}!</h1>
-      </mat-toolbar>
-      <app-news-feeds-list [style.marginTop.px]="mobileQuery.matches ? 56 : 0"></app-news-feeds-list>
+      </mat-toolbar>      
+      <app-news-feeds-list [style.marginTop.px]="mobileQuery.matches ? 56 : 0" *ngIf="showFeeds"></app-news-feeds-list>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

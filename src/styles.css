@@ -2,6 +2,6 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 body { 
-  font-family: Roboto, Arial, sans-serif;
+  font-family: Roboto,Arial,"Lucida Grande",sans-serif;
   margin: 0;
 }

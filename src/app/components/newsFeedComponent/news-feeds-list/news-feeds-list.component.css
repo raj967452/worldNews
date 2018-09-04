@@ -12,6 +12,7 @@
 }
 .news-card .mat-card-image {
   display: block;
+  background: #eaeaea;
 }
 .news-card .mat-card-title a {
   font-size: 16px;

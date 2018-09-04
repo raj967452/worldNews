@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {NewsFeedsService} from '../../newsFeedServices/news-feeds.service';
+import {NewsFeedsService} from '../../../services/newsFeedServices/news-feeds.service';
 import { catchError, map } from 'rxjs/operators';
-import {IFeedData} from '../../newsFeedServices/feedData';
+import {IFeedData} from '../../../services/newsFeedServices/feedData';
 import { Observable } from 'rxjs';
-import { HttpErrorHandler, HandleError } from '../../http-error-handler.service';
+import { HttpErrorHandler, HandleError } from '../../../http-error-handler.service';
+
 
 @Component({
   selector: 'app-news-feeds-list',
@@ -13,7 +14,6 @@ import { HttpErrorHandler, HandleError } from '../../http-error-handler.service'
 export class NewsFeedsListComponent implements OnInit {
   errorMsg: string;
   feedsData$: IFeedData[];
-
   private handleError: HandleError;
 
   constructor(private newsfeedsService: NewsFeedsService, httpErrorHandler: HttpErrorHandler) {

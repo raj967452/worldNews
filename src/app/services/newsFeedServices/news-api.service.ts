@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpErrorHandler, HandleError } from '../http-error-handler.service';
-import { stringify, parse } from 'querystring';
+import { HttpErrorHandler, HandleError } from '../../http-error-handler.service';
+import { stringify } from 'querystring';
 
-const API_KEY = '8fe03e3dce6b42a39281a8f2e2336d58';
 const host = 'https://newsapi.org';
 
 @Injectable({
